@@ -1,5 +1,5 @@
 from django.db import models
-from .choices import generos, velocidad_planes
+from .choices import generos, velocidad_planes, tipo_cargo
 # Create your models here.
 class clientes(models.Model):
     dni = models.CharField(max_length=10, primary_key=True)
@@ -28,7 +28,7 @@ class personal(models.Model):
     genero = models.CharField(max_length=10,choices=generos, default = 'Femenino')
     domicilio = models.CharField(max_length=70)
     correo = models.EmailField()
-    cargo = models.CharField(max_length=70)
+    cargo = models.CharField(max_length=70, choices=tipo_cargo, default = 'Tecnico 1')
 
     def __str__(self):
         return self.cargo
