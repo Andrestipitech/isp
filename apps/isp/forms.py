@@ -32,8 +32,6 @@ class ClienteForm(forms.ModelForm):
             'domicilio':forms.TextInput(attrs={'class':'form-control'}),
             'correo':forms.TextInput(attrs={'class':'form-control'}),
         }
-from django import forms
-from .models import *
 
 class PlanForm(forms.ModelForm):
     class Meta:
@@ -52,8 +50,6 @@ class PlanForm(forms.ModelForm):
             'velocidad':forms.Select(attrs={'class':'form-control'}),
             'descripcion':forms.TextInput(attrs={'class':'form-control'})
         }
-from django import forms
-from .models import *
 
 class PersonalForm(forms.ModelForm):
     class Meta:
