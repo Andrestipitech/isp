@@ -13,3 +13,13 @@ def crear_plan(request):
     else:
         form = PlanForm()
     return render(request, 'planes.html', {'form':form})
+
+def crear_cliente(request):
+    if request.method == 'POST':
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('isp:index')
+    else:
+        form = ClienteForm()
+    return render(request, 'clientes.html', {'form':form})

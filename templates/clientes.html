@@ -76,40 +76,39 @@
             <h1 class="text-light text-center mb-5">Formulario clientes</h1>
             <div class="row position-relative ">
                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 mx-auto mt-2" >
-                    <form  action="">
+                    <form  method="post">
+                      {% csrf_token %}
+
                         <div class="mb-3 ">
-                            <label for="dni" class="form-label text-light ">Cedula</label>
-                            <input type="text" class="form-control" id="dni" placeholder="Ingrese su Cédula.....">
+                            <label for="dni" class="form-label text-light ">{{form.dni.label}}</label>
+                            {{form.dni}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="name" class="form-label text-light ">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre.....">
+                            <label for="name" class="form-label text-light ">{{form.nombre.label}}</label>
+                            {{form.nombre}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="apellido" class="form-label text-light ">Apellido</label>
-                            <input type="text" class="form-control" id="apellido" placeholder="Ingrese su Apellido.....">
+                            <label for="apellido" class="form-label text-light ">{{form.apellido.label}}</label>
+                            {{form.apellido}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="ciudad" class="form-label text-light ">Ciudad</label>
-                            <input type="text" class="form-control" id="ciudad" placeholder="Ingrese su Ciudad.....">
+                            <label for="edad" class="form-label text-light ">{{form.edad.label}}</label>
+                            {{form.edad}}
                         </div>
                         
                         <div class="mb-3 ">
-                            <label for="telefono" class="form-label text-light ">Telefono</label>
-                            <input type="number" class="form-control" id="telefono" placeholder="Ingrese su Telefono.....">
+                            <label for="genero" class="form-label text-light ">{{form.genero.label}}</label>
+                            {{form.genero}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="sexo" class="form-label text-light ">Sexo</label>
-                            <input type="text" class="form-control" id="sexo" placeholder="Ingrese su Sexo.....">
+                            <label for="domicilio" class="form-label text-light ">{{form.domicilio.label}}</label>
+                            {{form.domicilio}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="mail" class="form-label text-light ">Correo</label>
-                            <input type="email" class="form-control" id="mail" placeholder="Ingrese su Mail.....">
+                            <label for="correo" class="form-label text-light ">{{form.correo.label}}</label>
+                            {{form.correo}}
                         </div>
-                        <div class="mb-3 ">
-                            <label for="edad" class="form-label text-light ">Edad</label>
-                            <input type="number" class="form-control" id="edad" >
-                        </div>
+                        
                         <div class="d-grid gap-2 mb-3">
                             <button class="btn btn-success">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
                             <button class="btn btn-secondary">Cancelar</button>
