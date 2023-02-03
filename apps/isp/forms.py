@@ -37,18 +37,24 @@ class PlanForm(forms.ModelForm):
     class Meta:
         model = planes
         fields=[
+            'descripcion',
             'velocidad',
-            'descripcion'
+            'tipo',
+            
         ]
 
         labels = {
+            'descripcion':'Descripcion',
             'velocidad':'Velocidad',
-            'descripcion':'Descripcion'
+            'tipo': 'Tipo',
+            
             
         }
         widgets={
-            'velocidad':forms.Select(attrs={'class':'form-control'}),
-            'descripcion':forms.TextInput(attrs={'class':'form-control'})
+            'descripcion':forms.TextInput(attrs={'class':'form-control'}),
+            'velocidad':forms.NumberInput(attrs={'class':'form-control'}),
+            'tipo':forms.Select(attrs={'class':'form-control'}),
+            
         }
 
 class PersonalForm(forms.ModelForm):

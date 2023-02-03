@@ -79,13 +79,18 @@
                     <form  method="post">
                       {% csrf_token %}
                         <div class="mb-3 ">
+                          <label for="{{form.descripcion.name}}" class="form-label text-light ">{{form.descripcion.label}}</label>
+                          {{form.descripcion}}
+                        </div>
+                        <div class="mb-3 ">
                             <label for="{{form.velocidad.name}}" class="form-label text-light ">{{form.velocidad.label}}</label>
                             {{form.velocidad}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="{{form.descripcion.name}}" class="form-label text-light ">{{form.descripcion.label}}</label>
-                            {{form.descripcion}}
-                        </div>
+                          <label for="{{form.tipo.name}}" class="form-label text-light ">{{form.tipo.label}}</label>
+                          {{form.tipo}}
+                      </div>
+
                        
                         <div class="d-grid gap-2 mb-3">
                             <button class="btn btn-success" type="submit">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
