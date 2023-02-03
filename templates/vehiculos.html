@@ -75,36 +75,24 @@
             <h1 class="text-light text-center mb-5">Formulario Vehiculo</h1>
             <div class="row position-relative ">
                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 mx-auto mt-2" >
-                    <form  action="">
+                    <form  method="post">
+                      {% csrf_token %}
+
                         <div class="mb-3 ">
-                            <label for="codigo" class="form-label text-light ">Código</label>
-                            <input type="text" class="form-control" id="codigo" >
+                            <label for="placa" class="form-label text-light ">{{form.placa.label}}</label>
+                            {{form.placa}}
+
                         </div>
                         <div class="mb-3 ">
-                            <label for="placa" class="form-label text-light ">Placa</label>
-                            <input type="text" class="form-control" id="placa" placeholder="Ingrese su Placa.....">
+                            <label for="tipo" class="form-label text-light ">{{form.tipo.label}}</label>
+                            {{form.tipo}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="modelo" class="form-label text-light ">Modelo</label>
-                            <input type="text" class="form-control" id="modelo" placeholder="Ingrese su Modelo.....">
-                        </div>
-                        <div class="mb-3 ">
-                            <label for="Marca" class="form-label text-light ">Marca</label>
-                            <input type="text" class="form-control" id="marca" placeholder="Ingrese su Marca.....">
-                        </div>
-                        <div class="mb-3 ">
-                            <label for="cc" class="form-label text-light ">Cilindraje</label>
-                            <input type="number" class="form-control" id="cc" >
+                            <label for="modelo" class="form-label text-light ">{{form.modelo.label}}</label>
+                            {{form.modelo}}
                         </div>
                         
-                        <div class="mb-3 ">
-                            <label for="personal" class="form-label text-light ">Personal</label>
-                            <input type="text" class="form-control" id="personal" >
-                        </div>
-                        <div class="mb-3">
-                            <label for="descripcion" class="form-label text-light">Observaciones</label>
-                            <textarea class="form-control" id="descripcion" rows="3"></textarea>
-                          </div>
+                        
                         <div class="d-grid gap-2 mb-3">
                             <button class="btn btn-success">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
                             <button class="btn btn-secondary">Cancelar</button>
