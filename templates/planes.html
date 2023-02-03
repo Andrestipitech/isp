@@ -76,19 +76,20 @@
             <h1 class="text-light text-center mb-5">Formulario Planes</h1>
             <div class="row position-relative ">
                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 mx-auto mt-2" >
-                    <form  action="">
+                    <form  method="post">
+                      {% csrf_token %}
                         <div class="mb-3 ">
-                            <label for="id_operacion" class="form-label text-light ">N°</label>
-                            <input type="text" class="form-control" id="id_operacion">
+                            <label for="{{form.velocidad.name}}" class="form-label text-light ">{{form.velocidad.label}}</label>
+                            {{form.velocidad}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="operacion" class="form-label text-light ">operacion</label>
-                            <input type="text" class="form-control" id="operacion" >
+                            <label for="{{form.descripcion.name}}" class="form-label text-light ">{{form.descripcion.label}}</label>
+                            {{form.descripcion}}
                         </div>
                        
                         <div class="d-grid gap-2 mb-3">
-                            <button class="btn btn-success">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
-                            <button class="btn btn-secondary">Cancelar</button>
+                            <button class="btn btn-success" type="submit">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
+                            <button class="btn btn-secondary" type="reset">Cancelar</button>
                         </div>
                     </form>
                 </div>

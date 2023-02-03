@@ -1,5 +1,5 @@
 from django.db import models
-from .choices import generos, velocidad_planes, tipo_cargo
+from .choices import generos, tipo_planes, tipo_cargo
 # Create your models here.
 class clientes(models.Model):
     dni = models.CharField(max_length=10, primary_key=True)
@@ -14,8 +14,9 @@ class clientes(models.Model):
         return self.dni
 class planes(models.Model):
     id_plan=models.AutoField(primary_key=True)
-    velocidad = models.CharField(max_length=10,choices=velocidad_planes, default = '50')
     descripcion = models.TextField(max_length=100)
+    velocidad = models.IntegerField()
+    tipo = models.TextField(max_length=65,choices=tipo_planes, default = 'Fibra Optica')
 
     def __str__(self):
         return self.velocidad
