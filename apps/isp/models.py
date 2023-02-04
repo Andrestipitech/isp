@@ -1,5 +1,6 @@
 from django.db import models
 from .choices import generos, tipo_planes, tipo_cargo
+
 # Create your models here.
 class clientes(models.Model):
     dni = models.CharField(max_length=10, primary_key=True)
@@ -19,7 +20,7 @@ class planes(models.Model):
     tipo = models.TextField(max_length=65,choices=tipo_planes, default = 'Fibra Optica')
 
     def __str__(self):
-        return self.velocidad
+        return self.descripcion
 
 class personal(models.Model):
     dni = models.CharField(max_length=10, primary_key=True)
@@ -43,3 +44,11 @@ class vehiculos(models.Model):
     def __str__(self):
         return self.placa
     
+class Contrato(models.Model):
+    id_contrato=models.AutoField(primary_key=True)
+    fecha = models.DateField()
+    cliente = models.ForeignKey(clientes, null=False, on_delete=models.CASCADE)
+    plan = models.ForeignKey(planes, null=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id_contrato)
