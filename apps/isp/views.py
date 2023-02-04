@@ -23,3 +23,23 @@ def crear_cliente(request):
     else:
         form = ClienteForm()
     return render(request, 'clientes.html', {'form':form})
+
+def crear_personal(request):
+    if request.method == 'POST':
+        form = PersonalForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('isp:index')
+    else:
+        form = PersonalForm()
+    return render(request, 'personal.html', {'form':form})
+
+def crear_vehiculo(request):
+    if request.method == 'POST':
+        form = VehiculoForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('isp:index')
+    else:
+        form = VehiculoForm()
+    return render(request, 'vehiculos.html', {'form':form})
