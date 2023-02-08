@@ -8,6 +8,9 @@ urlpatterns = [
     path('new_cliente/',views.crear_cliente, name='new_cliente'),
     path('new_personal/',views.crear_personal, name='new_personal'),
     path('new_vehiculo/',views.crear_vehiculo, name='new_vehiculo'),
+    path('new_contrato/',views.crear_contrato, name='new_contrato'),
+
+   # path('new_infraestructura/',views.crear_infraestrcutura, name='new_infraestructura'),
 
 
 ]

@@ -43,3 +43,13 @@ def crear_vehiculo(request):
     else:
         form = VehiculoForm()
     return render(request, 'vehiculos.html', {'form':form})
+
+def crear_contrato(request):
+    if request.method == 'POST':
+        form = ContratoForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('isp:index')
+    else:
+        form = ContratoForm()
+    return render(request, 'contrato.html', {'form':form})

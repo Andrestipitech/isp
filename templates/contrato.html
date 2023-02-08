@@ -78,11 +78,10 @@
                     <form  action="">
                         <div class="mb-3 ">
                             <label for="id_contrato" class="form-label text-light ">N°</label>
-                            <input type="text" class="form-control" id="id_contrato">
                         </div>
                         <div class="mb-3 ">
-                            <label for="date" class="form-label text-light ">Fecha</label>
-                            <input type="date" class="form-control" id="date" >
+                            <label for="date" class="form-label text-light ">{{form.fecha.label}}</label>
+                            {{form.fecha}}
                         </div>
                         <div class="mb-3 ">
                             <label for="client" class="form-label text-light ">Cliente</label>

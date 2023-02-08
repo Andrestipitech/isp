@@ -114,3 +114,52 @@ class VehiculoForm(forms.ModelForm):
             'modelo':forms.TextInput(attrs={'class':'form-control'})
         
         }
+class ContratoForm(forms.ModelForm):
+    class Meta:
+        model = Contrato
+        fields=[
+            'fecha',
+            'cliente',
+            'plan'
+        ]
+
+        labels = {
+            'fecha':'Fecha',
+            'cliente':'Cliente',
+            'plan':'Plan'
+            
+        }
+        widgets={
+            'fecha':forms.DateTimeInput(attrs={'class':'form-control'}),
+            'cliente':forms.Select(attrs={'class':'form-control'}),
+            'plan':forms.Select(attrs={'class':'form-control'}),
+            
+        
+        }
+"""
+class InfraestructuraForm(forms.ModelForm):
+    class Meta:
+        model = Infraestructura
+        fields=[
+            'tipo_t',
+            'contrato',
+            'fecha',
+            'observacion'
+        ]
+
+        labels = {
+            'tipo_t':'Tipo Trabajo',
+            'contrato':'contrato',
+            'fecha':'Fecha',
+            'observacion':'Observacion'
+            
+        }
+        widgets={
+            'tipo_t':forms.Select(attrs={'class':'form-control'}),
+            'contrato':forms.Select(attrs={'class':'form-control'}),
+            'fecha':forms.DateField(attrs={'class':'form-control'}),
+            'observacion':forms.TextInput(attrs={'class':'form-control'})
+            
+        
+        }
+"""
