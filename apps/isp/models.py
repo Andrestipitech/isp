@@ -1,5 +1,5 @@
 from django.db import models
-from .choices import generos, tipo_planes, tipo_cargo
+from .choices import generos, tipo_planes, tipo_cargo, tipo_trabajo
 
 # Create your models here.
 class clientes(models.Model):
@@ -30,7 +30,7 @@ class personal(models.Model):
     genero = models.CharField(max_length=10,choices=generos, default = 'Femenino')
     domicilio = models.CharField(max_length=70)
     correo = models.EmailField()
-    cargo = models.CharField(max_length=70, choices=tipo_cargo, default = 'Tecnico 1')
+    cargo = models.CharField(max_length=70, choices=tipo_cargo, default = 'Tecnico Base')
 
     def __str__(self):
         return self.cargo
@@ -52,3 +52,12 @@ class Contrato(models.Model):
 
     def __str__(self):
         return str(self.id_contrato)
+
+class Infraestructura(models.Model):
+    id_fra=models.AutoField(primary_key=True)
+    tipo_t = models.CharField(max_length=20, choices=tipo_trabajo, default = 'Instalar')
+    contrato = models.ForeignKey(Contrato, null=False, on_delete=models.CASCADE)
+    fecha = models.DateField()
+    observacion = models.TextField()
+    def __str__(self):
+        return str(self.id_fra)

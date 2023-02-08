@@ -12,3 +12,9 @@ tipo_cargo = (
     ('2', 'Tecnico Medio'),
     ('3', 'Tecnico Senior')  
 )
+
+tipo_trabajo =(
+    ('Instalacion','Instalar'),
+    ('Desintalacion', 'Desinstalar'),
+    ('Cambio de domicio', 'Mudansa')
+)
