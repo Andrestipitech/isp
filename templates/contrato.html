@@ -32,10 +32,17 @@
                           <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Cliente</span>
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a href="contrato.html" class="nav-link align-middle px-0">
-                          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Contrato</span>
-                      </a>
+                    <li>
+                      <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle collapsed" aria-expanded="false">
+                          <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Contrato</span> </a>
+                      <ul class="nav flex-column ms-1 collapse" id="submenu1" data-bs-parent="#menu" style="">
+                          <li class="w-100">
+                              <a href="#" class="nav-link px-0 text-light ms-4"> <span class="d-none d-sm-inline">Insertar</span></a>
+                          </li>
+                          <li>
+                              <a href="#" class="nav-link px-0 text-light ms-4"> <span class="d-none d-sm-inline">Mostrar</span></a>
+                          </li>
+                      </ul>
                     </li>
                     <li class="nav-item">
                       <a href="infraestructura.html" class="nav-link align-middle px-0">
@@ -75,25 +82,23 @@
             <h1 class="text-light text-center mb-5">Formulario Contrato</h1>
             <div class="row position-relative ">
                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 mx-auto mt-2" >
-                    <form  action="">
+                    <form  method="post">
+                        {% csrf_token %}
                         <div class="mb-3 ">
-                            <label for="id_contrato" class="form-label text-light ">N°</label>
-                        </div>
-                        <div class="mb-3 ">
-                            <label for="date" class="form-label text-light ">{{form.fecha.label}}</label>
+                            <label for="{{form.fecha.name}}" class="form-label text-light ">{{form.fecha.label}}</label>
                             {{form.fecha}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="client" class="form-label text-light ">Cliente</label>
-                            <input type="text" class="form-control" id="client" >
+                            <label for="{{form.cliente.name}}" class="form-label text-light ">{{form.cliente.label}}</label>
+                            {{form.cliente}}
                         </div>
                         <div class="mb-3 ">
-                            <label for="plan" class="form-label text-light ">Plan</label>
-                            <input type="text" class="form-control" id="plan" >
+                            <label for="{{form.plan.label}}" class="form-label text-light ">{{form.plan.label}}</label>
+                            {{form.plan}}
                         </div>
                         <div class="d-grid gap-2 mb-3">
-                            <button class="btn btn-success">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
-                            <button class="btn btn-secondary">Cancelar</button>
+                            <button class="btn btn-success" type="submit">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
+                            <button class="btn btn-secondary" type="reset">Cancelar</button>
                         </div>
                     </form>
                 </div>

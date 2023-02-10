@@ -124,13 +124,15 @@ class ContratoForm(forms.ModelForm):
         ]
 
         labels = {
+           
             'fecha':'Fecha',
             'cliente':'Cliente',
             'plan':'Plan'
             
         }
         widgets={
-            'fecha':forms.DateTimeInput(attrs={'class':'form-control'}),
+            
+            'fecha':forms.DateTimeInput(attrs={'class':'form-control', 'type':'date'}),
             'cliente':forms.Select(attrs={'class':'form-control'}),
             'plan':forms.Select(attrs={'class':'form-control'}),
             
