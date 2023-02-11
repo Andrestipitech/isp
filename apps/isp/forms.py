@@ -138,7 +138,7 @@ class ContratoForm(forms.ModelForm):
             
         
         }
-"""
+
 class InfraestructuraForm(forms.ModelForm):
     class Meta:
         model = Infraestructura
@@ -159,9 +159,8 @@ class InfraestructuraForm(forms.ModelForm):
         widgets={
             'tipo_t':forms.Select(attrs={'class':'form-control'}),
             'contrato':forms.Select(attrs={'class':'form-control'}),
-            'fecha':forms.DateField(attrs={'class':'form-control'}),
-            'observacion':forms.TextInput(attrs={'class':'form-control'})
+            'fecha':forms.DateTimeInput(attrs={'class':'form-control', 'type':'date'}),
+            'observacion':forms.Textarea(attrs={'class':'form-control'})
             
         
         }
-"""

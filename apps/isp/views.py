@@ -53,3 +53,13 @@ def crear_contrato(request):
     else:
         form = ContratoForm()
     return render(request, 'contrato.html', {'form':form})
+
+def crear_infra(request):
+    if request.method == 'POST':
+        form = InfraestructuraForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('isp:index')
+    else:
+        form = InfraestructuraForm()
+    return render(request, 'infraestructura.html', {'form':form})
