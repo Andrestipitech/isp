@@ -69,3 +69,4 @@ class Ruta(models.Model):
     personal = models.ManyToManyField(personal)
     fecha = models.DateField()
     descripcion = models.TextField()
+

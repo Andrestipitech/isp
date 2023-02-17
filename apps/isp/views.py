@@ -1,8 +1,14 @@
 from django.shortcuts import render, redirect
 from apps.isp.forms import *
+from django.urls import reverse_lazy
+from django.views.generic import FormView
 # Create your views here.
+
 def prueba(request):
     return render(request,'index.html')
+
+def login(request):
+    return render(request,'login.html')
 
 def crear_plan(request):
     if request.method == 'POST':
