@@ -61,3 +61,11 @@ class Infraestructura(models.Model):
     observacion = models.TextField()
     def __str__(self):
         return str(self.id_fra)
+
+class Ruta(models.Model):
+    id_ruta=models.AutoField(primary_key=True)
+    vehiculo = models.ForeignKey(vehiculos,null=False, on_delete=models.CASCADE)
+    orden = models.ForeignKey(Infraestructura,null=False, on_delete=models.CASCADE)
+    personal = models.ManyToManyField(personal)
+    fecha = models.DateField()
+    descripcion = models.TextField()
