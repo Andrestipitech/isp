@@ -13,6 +13,8 @@ class Home(LoginRequiredMixin, TemplateView):
 def prueba(request):
     return render(request,'index.html')
 
+
+
 @login_required(login_url="/login/")
 def crear_plan(request):
     if request.method == 'POST':
@@ -75,4 +77,6 @@ def crear_infra(request):
     return render(request, 'infraestructura.html', {'form':form})
 
 
-
+# listar elementos 
+def listar_contratos(request):
+    return render(request,'listar_contratos.html')

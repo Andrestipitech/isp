@@ -22,12 +22,13 @@
         {% endblock%}
         <div class="col pt-3 p-0">
           <!-- contenido de la pagina-->
-          {%block conted%}
+          
           <div class="container my-3  min-vh-100">
+            {%block conted%}
             <h1 class="text-light text-center">pagina en blanco</h1>
-            
+            {% endblock%}
           </div>
-          {% endblock%}
+          
             <!------------------------------------->
           {% block footer%}
           <footer class="footer my-auto">

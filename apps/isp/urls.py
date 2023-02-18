@@ -14,8 +14,8 @@ urlpatterns = [
     path('new_vehiculo/',views.crear_vehiculo, name='new_vehiculo'),
     path('new_contrato/',views.crear_contrato, name='new_contrato'),
     path('new_infra/',views.crear_infra, name='new_infra'),
-    
-
+    # listat los elementos
+    path('list_contrato/',views.listar_contratos, name='list_contrato'),
    # path('new_infraestructura/',views.crear_infraestrcutura, name='new_infraestructura'),
 
 
