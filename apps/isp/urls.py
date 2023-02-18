@@ -1,11 +1,13 @@
 from django.urls import path
 from . import views
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import views as auth_views
 app_name ='isp'
 
 urlpatterns = [
+    path('login/',LoginView.as_view(template_name ='login.html'), name='login'),
+    path('logout/',auth_views.LogoutView.as_view(template_name ='login.html'), name='logout'),
     path('isp/',views.prueba, name='index'),
-    path('',views.login, name='login'),
     path('new_plan/',views.crear_plan, name='new_plan'),
     path('new_cliente/',views.crear_cliente, name='new_cliente'),
     path('new_personal/',views.crear_personal, name='new_personal'),
