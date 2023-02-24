@@ -5,7 +5,7 @@ from django.views.generic import FormView
 from django.views.generic import CreateView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-
+from apps.isp.models import *
 class Home(LoginRequiredMixin, TemplateView):
     template_name ='index.html'
     login_url = 'isp:login'
@@ -79,4 +79,6 @@ def crear_infra(request):
 
 # listar elementos 
 def listar_contratos(request):
-    return render(request,'listar_contratos.html')
+    obj_contrato = Contrato.objects.all()
+
+    return render(request,'listar_contratos.html',{'contrato':obj_contrato})

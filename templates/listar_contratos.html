@@ -9,34 +9,24 @@
               <thead>
                 <tr>
                   <th class="center">#</th>
-                  <th class="center">Marca</th>
-                  <th class="center">Modelo</th>
-                  <th class="center">Cilindraje</th>
-                  <th class="center">Especificacion</th>
+                  <th class="center">Fecha</th>
+                  <th class="center">Cliente</th>
+                  <th class="center">Plan</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="center">1</td>
-                  <td class="center">Toyota</td>
-                  <td class="center">Rav-4</td>
-                  <td class="center">2000</td>
-                  <td class="center">Diesel, 4x4</td>
-                </tr>
-                <tr>
-                  <td class="center">2</td>
-                  <td class="center">Kia</td>
-                  <td class="center">as1</td>
-                  <td class="center">220v</td>
-                  <td class="center">Electrico</td>
-                </tr>
-                <tr>
-                  <td class="center">3</td>
-                  <td class="center">Hyundai</td>
-                  <td class="center">Sonata</td>
-                  <td class="center">2000</td>
-                  <td class="center">Hibrido</td>
-                </tr>
+                {%if contrato%}
+                  {%for c in contrato%}
+                    <tr>
+                      <td >{{c.id_contrato}}</td>
+                      <td >{{c.fecha}}</td>
+                      <td >{{c.cliente}}</td>
+                      <td >{{c.plan}}</td>
+                      
+                    </tr>
+                  {%endfor%}
+                {%endif%}
+                
               </tbody>
             </table>
         </div>
