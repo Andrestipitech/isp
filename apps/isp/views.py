@@ -34,7 +34,7 @@ def crear_cliente(request):
         return redirect('isp:index')
     else:
         form = ClienteForm()
-    return render(request, 'clientes.html', {'form':form})
+    return render(request, 'cliente.html', {'form':form})
 @login_required(login_url="/login/")
 def crear_personal(request):
     if request.method == 'POST':
