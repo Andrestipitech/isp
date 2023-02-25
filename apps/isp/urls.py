@@ -16,7 +16,10 @@ urlpatterns = [
     path('new_infra/',views.crear_infra, name='new_infra'),
     # listat los elementos
     path('list_contrato/',views.listar_contratos, name='list_contrato'),
+    path('list_cliente/',views.listar_cliente, name='list_cliente'),
+
    # path('new_infraestructura/',views.crear_infraestrcutura, name='new_infraestructura'),
+
 
 
 ]

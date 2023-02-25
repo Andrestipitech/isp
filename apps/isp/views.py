@@ -82,3 +82,10 @@ def listar_contratos(request):
     obj_contrato = Contrato.objects.all()
 
     return render(request,'listar_contratos.html',{'contrato':obj_contrato})
+
+
+
+def listar_cliente(request):
+    obj_cliente = clientes.objects.all()
+
+    return render(request,'listar_clientes.html',{'cliente':obj_cliente})
