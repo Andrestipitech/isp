@@ -89,3 +89,16 @@ def listar_cliente(request):
     obj_cliente = clientes.objects.all()
 
     return render(request,'listar_clientes.html',{'cliente':obj_cliente})
+
+
+def actualizar_form_cliente(request):
+
+    context = {
+        'actualiza':clientes.objects.get(id=request.POST["idCliente"])
+        }
+    return render(request, 'cliente.html',context)
+
+    
+def actualizar_cliente(request):
+    a_dni_cli = request.POST["dni"]
+ 

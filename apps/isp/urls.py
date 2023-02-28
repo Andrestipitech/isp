@@ -17,6 +17,8 @@ urlpatterns = [
     # listat los elementos
     path('list_contrato/',views.listar_contratos, name='list_contrato'),
     path('list_cliente/',views.listar_cliente, name='list_cliente'),
+    path('act_cliente/<int:id_cliente>',views.actualizar_form_cliente, name='act_f_cliente'),
+
 
    # path('new_infraestructura/',views.crear_infraestrcutura, name='new_infraestructura'),
 

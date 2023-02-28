@@ -26,7 +26,7 @@
             <h1 class="text-light text-center mb-5">Formulario clientes</h1>
             <div class="row position-relative ">
                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 mx-auto mt-2" >
-                    <form  method="post">
+                    <form  method="post" action={% url 'isp:act_cliente' %} >
                       {% csrf_token %}
 
                         <div class="mb-3 ">
@@ -54,6 +54,7 @@
                             <label for="domicilio" class="form-label text-light ">{{form.domicilio.label}}</label>
                             {{form.domicilio}}
                         </div>
+                        <input type="hidden" name="idCliente" value="{{actualiza.dni}}">
                         <div class="mb-3 ">
                             <label for="correo" class="form-label text-light ">{{form.correo.label}}</label>
                             {{form.correo}}
