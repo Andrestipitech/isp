@@ -26,6 +26,7 @@
             <h1 class="text-light text-center mb-5">Formulario clientes</h1>
             <div class="row position-relative ">
                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 mx-auto mt-2" >
+                  {% if form%}
                     <form  method="post">
                       {% csrf_token %}
 
@@ -58,12 +59,52 @@
                             <label for="correo" class="form-label text-light ">{{form.correo.label}}</label>
                             {{form.correo}}
                         </div>
-
+                        
                         <div class="d-grid gap-2 mb-3">
                             <button class="btn btn-success">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
                             <button class="btn btn-secondary">Cancelar</button>
                         </div>
                     </form>
+                  {% elif update%}
+                  <form  method="post">
+                    {% csrf_token %}
+
+                      <div class="mb-3 ">
+                          <label for="dni" class="form-label text-light ">{{update.dni.label}}</label>
+                          {{update.dni}}
+                      </div>
+                      <div class="mb-3 ">
+                          <label for="name" class="form-label text-light ">{{update.nombre.label}}</label>
+                          {{update.nombre}}
+                      </div>
+                      <div class="mb-3 ">
+                          <label for="apellido" class="form-label text-light ">{{update.apellido.label}}</label>
+                          {{update.apellido}}
+                      </div>
+                      <div class="mb-3 ">
+                          <label for="edad" class="form-label text-light ">{{update.edad.label}}</label>
+                          {{update.edad}}
+                      </div>
+
+                      <div class="mb-3 ">
+                          <label for="genero" class="form-label text-light ">{{update.genero.label}}</label>
+                          {{update.genero}}
+                      </div>
+                      <div class="mb-3 ">
+                          <label for="domicilio" class="form-label text-light ">{{update.domicilio.label}}</label>
+                          {{update.domicilio}}
+                      </div>
+                      <div class="mb-3 ">
+                          <label for="correo" class="form-label text-light ">{{update.correo.label}}</label>
+                          {{update.correo}}
+                      </div>
+                      
+                      <div class="d-grid gap-2 mb-3">
+                          <button class="btn btn-success">Actualizar  <i class="fa-solid fa-right-to-bracket"></i></button>
+                          <button class="btn btn-secondary">Cancelar</button>
+                      </div>
+                  </form>
+                {%endif%}
                 </div>
             </div>
           </div>

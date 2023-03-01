@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from apps.isp.forms import *
 from django.urls import reverse_lazy
-from django.views.generic import FormView
-from django.views.generic import CreateView, TemplateView
+from django.views.generic import CreateView, TemplateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from apps.isp.models import *
@@ -89,3 +88,23 @@ def listar_cliente(request):
     obj_cliente = clientes.objects.all()
 
     return render(request,'listar_clientes.html',{'cliente':obj_cliente})
+
+# actualizacion 
+
+def actualizar_cliente(request,id_clie):
+    cliente = clientes.objects.get(dni=id_clie)
+    if request.method == 'GET':
+        form = ClienteForm(instance=cliente)
+    else:
+        form = ClienteForm(request.POST, instance=cliente)
+        if form.is_valid():
+            form.save()
+        return redirect('isp:list_cliente')
+    return render(request, 'cliente.html', {'update':form})
+
+class Actualizar_client(UpdateView):
+    model = clientes
+    form_class = ClienteForm
+    template_name = 'cliente.html'
+    success_url = reverse_lazy('isp:list_cliente')
+    context_object_name ='update'

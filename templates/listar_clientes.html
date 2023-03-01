@@ -16,7 +16,7 @@
                   <th class="center">genero</th>
                   <th class="center">domicilio</th>
                   <th class="center">correo</th>
-
+                  <th class="center">Opciones</th>
               </thead>
               <tbody>
                 {%if cliente %}
@@ -30,6 +30,10 @@
                       <td >{{c.genero}}</td>
                       <td >{{c.domicilio}}</td>
                       <td >{{c.correo}}</td>
+                      <td>
+                        <a class="btn btn-primary"  href="{%url 'isp:up_cliente' c.dni%}"> <i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-danger" href=""> <i class="fa-solid fa-trash"></i></a>
+                      </td>
                     </tr>
                   {%endfor%}
                 {%endif%}
