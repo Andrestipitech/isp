@@ -109,3 +109,10 @@ class Actualizar_client(UpdateView):
     template_name = 'cliente.html'
     success_url = reverse_lazy('isp:list_cliente')
     context_object_name ='update'
+
+class Actualizar_contrato(UpdateView):
+    model = Contrato
+    form_class = ContratoForm
+    template_name = 'contrato.html'
+    success_url = reverse_lazy('isp:list_contrato')
+    context_object_name ='update'

@@ -21,6 +21,8 @@ urlpatterns = [
     # actualizar elementos
     path('up_cliente/<str:id_clie>',views.actualizar_cliente, name='up_cliente'),
     path('up_c/<str:pk>',views.Actualizar_client.as_view(), name='up_c'),
+    path('up_contr/<int:pk>',views.Actualizar_contrato.as_view(), name='up_contr'),
+
 
    # path('new_infraestructura/',views.crear_infraestrcutura, name='new_infraestructura'),
 

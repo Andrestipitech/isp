@@ -27,6 +27,7 @@
             <h1 class="text-light text-center mb-5">Formulario Contrato</h1>
             <div class="row position-relative ">
                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 mx-auto mt-2" >
+                  {% if form %}
                     <form  method="post">
                         {% csrf_token %}
                         <div class="mb-3 ">
@@ -46,6 +47,27 @@
                             <button class="btn btn-secondary" type="reset">Cancelar</button>
                         </div>
                     </form>
+                  {% elif update %}
+                  <form  method="post">
+                    {% csrf_token %}
+                    <div class="mb-3 ">
+                        <label for="{{form.fecha.name}}" class="form-label text-light ">{{update.fecha.label}}</label>
+                        {{update.fecha}}
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="{{form.cliente.name}}" class="form-label text-light ">{{update.cliente.label}}</label>
+                        {{update.cliente}}
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="{{form.plan.label}}" class="form-label text-light ">{{udate.plan.label}}</label>
+                        {{update.plan}}
+                    </div>
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn btn-success" type="submit">Guardar  <i class="fa-solid fa-right-to-bracket"></i></button>
+                        <button class="btn btn-secondary" type="reset">Cancelar</button>
+                    </div>
+                </form>
+                {%endif%}
                 </div>
             </div>
           </div>
