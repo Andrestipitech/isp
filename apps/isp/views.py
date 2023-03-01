@@ -89,6 +89,7 @@ def listar_cliente(request):
 
     return render(request,'listar_clientes.html',{'cliente':obj_cliente})
 
+
 # actualizacion 
 
 def actualizar_cliente(request,id_clie):

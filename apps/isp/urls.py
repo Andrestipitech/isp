@@ -17,11 +17,11 @@ urlpatterns = [
     # listat los elementos
     path('list_contrato/',views.listar_contratos, name='list_contrato'),
     path('list_cliente/',views.listar_cliente, name='list_cliente'),
+
     # actualizar elementos
     path('up_cliente/<str:id_clie>',views.actualizar_cliente, name='up_cliente'),
     path('up_c/<str:pk>',views.Actualizar_client.as_view(), name='up_c'),
+
    # path('new_infraestructura/',views.crear_infraestrcutura, name='new_infraestructura'),
-
-
 
 ]
