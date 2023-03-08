@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'leandroproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'leandro',
-        'USER' : 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'ENGINE': 'mysql_cymysql',
+        'NAME': 'byh6gje83b8bx4lqfcdo',
+        'USER' : 'u6eh3eypow6mzo39',
+        'PASSWORD': 'oXQa2f1y5Voyl4Wfz9gy',
+        'HOST': 'byh6gje83b8bx4lqfcdo-mysql.services.clever-cloud.com',
         'PORT': '3306',
     }
 }
